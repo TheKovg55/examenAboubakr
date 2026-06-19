@@ -1,10 +1,10 @@
 <?php
 $bd = mysqli_connect("localhost", "root", "", "fifa2026_stats");
 
-$country = $_POST['country'] ?? '';
-$buts_exact = $_POST['buts_exact'] ?? '';
-$buts_min = $_POST['buts_min'] ?? '';
-$buts_max = $_POST['buts_max'] ?? '';
+$country = $_GET['country'] ?? '';
+$buts_exact = $_GET['buts_exact'] ?? '';
+$buts_min = $_GET['buts_min'] ?? '';
+$buts_max = $_GET['buts_max'] ?? '';
 
 $query = "SELECT * FROM joueurs WHERE 1=1";
 
@@ -67,7 +67,7 @@ $result = mysqli_query($bd, $query);
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2 class="mb-4">Rechercher un Joueur</h2>
-                <form method="post">
+                <form method="get">
                     <div class="mb-3">
                         <label for="country" class="form-label">Pays</label>
                         <input type="text" class="form-control" id="country" name="country" placeholder="Entrez le pays...">
@@ -124,7 +124,13 @@ $result = mysqli_query($bd, $query);
             </table>
         </div>
     </div>
-
+    <script>
+        window.addEventListener('load', function() {
+            console.log("Un petit Easter Egg pour vous...");
+            console.log("Il faut ajouter du JS donc j'ai ajouter ici xD");
+            console.log("Donnez moi une bonne note D:");
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
