@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login_result = mysqli_query($bd, $login_query);
     
     if ($login_result && mysqli_num_rows($login_result) > 0) {
-        header("Location: /php/menu.php");
+        header("Location: menu.php");
         exit(); 
     } else {
         $message = "Nom d'utilisateur ou mot de passe invalide.";
